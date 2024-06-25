@@ -8,16 +8,16 @@ load("@rules_python//python:repositories.bzl", "python_register_toolchains", "py
 py_repositories()
 
 
-python_register_toolchains(
-    name = "python3_10",
-    python_version = "3.10",
-    ignore_root_user_error = True
-)
+# python_register_toolchains(
+#     name = "python3_10",
+#     python_version = "3.10",
+#     ignore_root_user_error = True
+# )
 
-load("@python3_10//:defs.bzl", "interpreter")
+# load("@python3_10//:defs.bzl", "interpreter")
 
-load("@rules_python//python:pip.bzl", "pip_parse")
+# load("@rules_python//python:pip.bzl", "pip_parse")
 
-pip_parse(
-    python_interpreter_target = interpreter,
-)
+# pip_parse(
+#     python_interpreter_target = interpreter,
+# )
