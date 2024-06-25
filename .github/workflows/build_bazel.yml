@@ -40,7 +40,7 @@ jobs:
         python3 --version
         bazel build //:main
 
-        export binary_output = "$(./bazel-bin/main)"
+        binary_output = "$(./bazel-bin/main)"
         echo $binary_output
         # Extract only the version number using regular expression
         version=$(echo "$binary_output" | grep -oP '\d+\.\d+\.\d+')
