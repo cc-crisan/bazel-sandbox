@@ -43,7 +43,7 @@ jobs:
         binary_output="$(./bazel-bin/main)"
         echo $binary_output
         # Extract only the version number using regular expression
-        version=$(echo "$binary_output" | grep -oP '\d+\.\d+\.\d+')
+        version=$(echo "$binary_output" | grep -oP '\d+\.\d+\.\d+' | head -n 1)
 
         # Expected Python version
         expected_version="3.9.17"
