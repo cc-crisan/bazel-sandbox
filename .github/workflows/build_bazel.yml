@@ -21,10 +21,12 @@ jobs:
       with:
         java-version: '11'
 
-    - name: Install Bazel
-      uses: bazelbuild/setup-bazel@v5
+    - uses: bazelbuild/setup-bazelisk@v3
+    - name: Mount bazel cache  # Optional
+      uses: actions/cache@v4
       with:
-        version: 'latest'
+        path: "~/.cache/bazel"
+        key: bazel
 
     - name: Install Python (if needed)
       uses: actions/setup-python@v4
