@@ -28,6 +28,11 @@ jobs:
       with:
         python-version: '3.9'  # specify your required Python version
 
+    - name: Install Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'  # specify your required Python version
+
     - name: Build with Bazel
       run: |
         sudo apt-get update
