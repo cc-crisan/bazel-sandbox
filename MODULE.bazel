@@ -8,8 +8,9 @@ module(
 bazel_dep(name = "rules_python", version = "0.25.0")
 bazel_dep(name = "rules_cc", version = "0.0.9")
 #bazel_dep(name = "platforms", version = "0.0.9")
-bazel_dep(name = "rules_foreign_cc", version = "0.10.1") # bazel
+bazel_dep(name = "rules_foreign_cc", version = "0.10.1")
 bazel_dep(name = "bazel_skylib", version = "1.7.1")
+
 
 # Declare an override for Pybind11 if you want to use a specific version
 # Comment this if you do not need a specific version or custom repository
@@ -19,4 +20,6 @@ python = use_extension("@rules_python//python/extensions:python.bzl", "python")
 python.toolchain(
     configure_coverage_tool = True,
     python_version = "3.9",
+    ignore_root_user_error = True
 )
+
